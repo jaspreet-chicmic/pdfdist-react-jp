@@ -38,23 +38,23 @@ export default function Pdf() {
 			// const renderContext = { canvasContext, viewport };
 			// page.render(renderContext);
             
-            console.log(pdfJS.isPdfFile("ChicMicTrip.pdf"),"LLLLLL", await pdfJS.getDocument("https://drive.google.com/file/d/1wphA65hG89faH_Uef3UenI5VORLswbUB/view?usp=sharing").promise);
-            console.log(pdfJS,"pdfJS", window.location.origin + '/pdf.worker.min.js')
-			const pdf = pdfJS.getDocument("https://drive.google.com/file/d/1wphA65hG89faH_Uef3UenI5VORLswbUB/view?usp=sharing");
-            console.log("DDDD")
+            // console.log(pdfJS.isPdfFile("ChicMicTrip.pdf"),"LLLLLL", await pdfJS.getDocument("https://drive.google.com/file/d/1wphA65hG89faH_Uef3UenI5VORLswbUB/view?usp=sharing").promise);
+            // console.log(pdfJS,"pdfJS", window.location.origin + '/pdf.worker.min.js')
+			// const pdf = pdfJS.getDocument("https://drive.google.com/file/d/1wphA65hG89faH_Uef3UenI5VORLswbUB/view?usp=sharing");
+            // console.log("DDDD")
 
-			const page = await pdf.getPage(1);
-			const viewport = page.getViewport({ scale: 1.5 });
+			// const page = await pdf.getPage(1);
+			// const viewport = page.getViewport({ scale: 1.5 });
 
-			// Prepare canvas using PDF page dimensions.
-			const canvas = canvasRef.current;
-			const canvasContext = canvas.getContext('2d');
-			canvas.height = viewport.height;
-			canvas.width = viewport.width;
+			// // Prepare canvas using PDF page dimensions.
+			// const canvas = canvasRef.current;
+			// const canvasContext = canvas.getContext('2d');
+			// canvas.height = viewport.height;
+			// canvas.width = viewport.width;
 
-			// Render PDF page into canvas context.
-			const renderContext = { canvasContext, viewport };
-			page.render(renderContext);
+			// // Render PDF page into canvas context.
+			// const renderContext = { canvasContext, viewport };
+			// page.render(renderContext);
 		})();
 	}, []);
 
