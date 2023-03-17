@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {_isValidProtocol} from "pdfjs-dist"
 import React, { useEffect, useRef } from 'react';
 //  ~/Downloads/ChicMicTrip.pdf
+const PDFJS = window.pdfjsLib;
 export default function Pdf() {
 	const canvasRef = useRef(null);
     // const pdfJS = import('pdfjs-dist/build/pdf');
@@ -17,12 +18,13 @@ export default function Pdf() {
 			const pdfJS = await import('pdfjs-dist/build/pdf');
             console.log(pdfJS, pdfJS.isPdfFile("ChicMicTrip.pdf"))
             pdfJS.GlobalWorkerOptions.workerSrc =
-            window.location.origin + '/pdf.worker.min.js';
+            "//pdfjs-dist/build/pdf.worker.min.js";
 			console.log("workerSrc ",pdfJS.GlobalWorkerOptions.workerSrc)
 
             pdfJS.GlobalWorkerOptions.workerSrc =
 				window.location.origin + '/pdf.worker.min.js';
-                
+            
+			console.log("pdfJS.getDocument('ChicMicTrip.pdf') : ",pdfJS)
 			// const pdf = await pdfJS.getDocument('ChicMicTrip.pdf').promise;
 
 			// const page = await pdf.getPage(1);

@@ -38,9 +38,11 @@ export default function PdfViewer() {
     const canvas = document.createElement("canvas");
     canvas.setAttribute("className", "canv");
     let canv = document.querySelector(".canv");
-
-    for (let i = 1; i <= pdf.numPages; i++) {
-      var page = await pdf.getPage(i);
+    // base_image = new Image();
+    // base_image.src = 'img/base.png';
+    // base_image.onload = () => ctx.drawImage(base_image, 0, 0);
+    // for (let i = 1; i <= pdf.numPages; i++) {
+      var page = await pdf.getPage(1);
       var viewport = page.getViewport({ scale: 1 });
       canvas.height = viewport.height;
       canvas.width = viewport.width;
@@ -52,9 +54,9 @@ export default function PdfViewer() {
       setWidth(viewport.width);
       setHeight(viewport.height);
       await page.render(render_context).promise;
-      let img = canvas.toDataURL("image/png");
-      imagesList.push(img);
-    }
+      // let img = canvas.toDataURL("image/png");
+      // imagesList.push(img);
+    // }
     setImages(imagesList);
     setPageRendering(false);
   }
@@ -117,6 +119,7 @@ export default function PdfViewer() {
           </div>
           <div id="image-canvas-row">
             <canvas id="pdf-canvas" width={width} height={height}>
+            </canvas>
               <div style={styles.wrapper}>
                 {images.map((image, idx) => (
                   <div key={idx} style={styles.imageWrapper}>
@@ -134,7 +137,6 @@ export default function PdfViewer() {
                   </div>
               ))}
             </div>
-            </canvas>
           </div>
           <div id="page-loader" hidden={!pageRendering}>
             Loading page ...
