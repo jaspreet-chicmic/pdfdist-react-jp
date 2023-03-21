@@ -4,19 +4,19 @@
   "private": true,
   "dependencies": {
     "@babel/runtime": "7.13.8",
-    "gulp": "4.0.2",
-    "pdf-image": "2.0.0",
-    "react-pdf-to-image": "1.0.2",
-    "webpack": "5.26.3",
-    "worker-loader": "3.0.8",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "gulp": "4.0.2",
+    "pdf-image": "2.0.0",
     "pdfjs-dist": "^3.4.120",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-pdf-to-image": "1.0.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "5.26.3",
+    "worker-loader": "3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
