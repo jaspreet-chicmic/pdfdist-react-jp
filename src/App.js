@@ -7,6 +7,7 @@ import PdfViewOnly from './PdfViewOnly';
 import PdfEditor from './MyPDFViewer';
 import MyPDFViewer from './MyPDFViewer';
 import PdfInputView from './PdfInputView';
+import LearningPdf from './LearningPdf';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <MyPDFViewer pdfUrl="https://www.who.int/health-topics/coronavirus/who-coronavirus-disease-dashboard-novel-coronavirus-landscape-covid-19-vaccine-timeline.pdf?ua=1" /> */}
       {/* <PdfViewer/>
        */}
-       <PdfInputView/>
+       <LearningPdf url = "https://www.who.int/health-topics/coronavirus/who-coronavirus-disease-dashboard-novel-coronavirus-landscape-covid-19-vaccine-timeline.pdf?ua=1"/>
+       {/* <PdfInputView/> */}
       {/* <PdfViewOnly/> */}
       {/* <PdfJs/> */}
       {/* <PdfNextCanvas/> */}
